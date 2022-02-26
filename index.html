@@ -4,8 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="assets/style.css" />
     <title>Platform Admin</title>
   </head>
-  <body></body>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="col-2">
+          <div class="logo">
+            <a href="#"><img src="assets/platform-logo.png" /></a>
+          </div>
+          <div class="filter">
+            FILTER: <a href="#">All</a> <a href="#">Free</a>
+            <a href="#">Paying</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="action-bar">
+      <div class="container">
+        <div class="col-2">
+          <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search" id="search" />
+          </div>
+          <div class="">
+            <a href="#" class="btn">Create new Account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-content">
+      <div class="container">
+        <table>
+          <tr>
+            <th>ID</th>
+            <th class="name">Company Name</th>
+            <th>Owner Email</th>
+          </tr>
+          <tr>
+            <td>12401</td>
+            <td class="name">ACME Corporation</td>
+            <td>tom.hudges@apple.com</td>
+          </tr>
+          <tr>
+            <td>12401</td>
+            <td class="name">ACME Corporation</td>
+            <td>tom.hudges@apple.com</td>
+          </tr>
+          <tr>
+            <td>12401</td>
+            <td class="name">ACME Corporation</td>
+            <td>tom.hudges@apple.com</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      const search = document.getElementById("search");
+
+      let timeout = null;
+      search.addEventListener("keyup", function () {
+        clearTimeout(timeout);
+
+        timeout = setTimeout(function () {
+          fetch("https://swapi.dev/api/people/4")
+            .then((response) => response.json())
+            .then((data) => console.log(JSON.stringify(data)));
+        }, 1000);
+      });
+    </script>
+  </body>
 </html>

@@ -1,0 +1,127 @@
+:root {
+  --blue: #259bc1;
+  --blue-lighter: #51afcd;
+  --grey: #f8f8f8;
+  --green: #8dc63f;
+
+  --text-blue: #80c4da;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.site-header {
+  background-color: var(--blue);
+  padding: 15px 0;
+}
+.filter {
+  color: var(--text-blue);
+  margin-top: 5px;
+
+  a {
+    color: var(--text-blue);
+    padding: 10px;
+    border-radius: 3px;
+    background: transparent;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+      background: var(--blue-lighter);
+    }
+  }
+
+  @media (max-width: 425px) {
+    margin-top: 10px;
+  }
+}
+.col-2 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+}
+.action-bar {
+  background-color: var(--grey);
+  padding: 18px 0;
+}
+.search-wrapper {
+  position: relative;
+
+  i {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgba(41, 41, 41, 0.25);
+    font-size: 14px;
+  }
+  input {
+    padding: 10px 10px 10px 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(41, 41, 41, 0.25);
+    font-size: 12px;
+  }
+}
+
+.btn {
+  background: var(--green);
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 12px;
+  text-decoration: none;
+  display: inline-block;
+
+  @media screen and (max-width: 425px) {
+    margin-top: 10px;
+  }
+}
+
+.site-content {
+  table {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+      border-bottom: 1px solid rgba(41, 41, 41, 0.25);
+    }
+
+    th {
+      color: rgba(0, 0, 0, 0.35);
+      font-weight: normal;
+      padding: 20px 10px;
+      text-align: left;
+    }
+    td {
+      padding: 20px 10px;
+      color: rgba(0, 0, 0, 0.35);
+
+      &.name {
+        color: #000;
+        font-size: 14px;
+      }
+    }
+  }
+}
